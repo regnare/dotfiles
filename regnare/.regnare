@@ -1,4 +1,7 @@
 # vim: set syntax=zsh:
+
+export PATH=$PATH:~/bin
+
 if [[ -e  $ZSH/oh-my-zsh.sh ]]; then
   source $ZSH/oh-my-zsh.sh
 else
