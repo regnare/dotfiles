@@ -19,6 +19,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+" https://github.com/nfnty/vim-nftables
 NeoBundle 'nfnty/vim-nftables'
 
 " You can specify revision/branch/tag.
@@ -43,5 +44,4 @@ set expandtab
 
 set showmatch
 
-filetype plugin indent on
 syntax on
