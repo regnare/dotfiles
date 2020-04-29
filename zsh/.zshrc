@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="/home/ben/.oh-my-zsh"
+export ZSH_CUSTOM="/home/ben/.oh-my-zsh-custom"
 #ZSH_THEME="candy"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git tmux)
