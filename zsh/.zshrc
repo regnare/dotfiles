@@ -6,6 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+DISABLE_AUTO_TITLE="true"
+echo -en "\e]2;$USER@$HOST\a"
 export ZSH="/home/ben/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
