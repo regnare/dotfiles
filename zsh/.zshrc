@@ -10,6 +10,7 @@ DISABLE_AUTO_TITLE="true"
 case $TERM in
   xterm*)
     precmd() { echo -en "\e]0;$USER@$HOST:${PWD/$HOME/~}\a" }
+    ;;
 esac
 
 export ZSH="/home/ben/.oh-my-zsh"
