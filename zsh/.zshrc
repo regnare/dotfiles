@@ -6,14 +6,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# https://tldp.org/HOWTO/Xterm-Title-3.html
 DISABLE_AUTO_TITLE="true"
 case $TERM in
   xterm*)
-    precmd() { echo -en "\e]0;$USER@$HOST:${PWD/$HOME/~}\a" }
+    precmd() { print -Pn "\e]0;%n@%m: %~\a" }
     ;;
 esac
 
-export ZSH="/home/ben/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 plugins=(git tmux)
