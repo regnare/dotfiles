@@ -1,8 +1,0 @@
-# vim: set syntax=zsh:
-
-export PATH=$PATH:~/bin
-
-
-alias tm="tmux a -d -t remote || tmux new -s remote"
-alias f="ssh farside.lan"
-alias o="ssh obsidian.lan"

@@ -19,7 +19,12 @@ source $ZSH/oh-my-zsh.sh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 plugins=(git tmux)
 export EDITOR='vim'
-source $HOME/.regnare
+export PATH=$PATH:~/bin
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias tm="tmux a -d -t remote || tmux new -s remote"
+alias f="ssh farside.lan"
+alias o="ssh obsidian.lan"
