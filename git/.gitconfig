@@ -1,6 +1,3 @@
 [user]
 	email = regnare@gmail.com
 	name = Ben Olson
-	signingkey = F2C998748454F7FE
-[commit]
-	gpgsign = true
