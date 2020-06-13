@@ -19,6 +19,17 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 plugins=(git tmux)
 export EDITOR='vim'
 
+ssh() {
+  which gpgconf >/dev/null
+  if [[ "$?" == "0" ]]; then
+    echo "Running gpgconf"
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
+    gpg-connect-agent updatestartuptty /bye >/dev/null
+  fi
+  command ssh "$@"
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
