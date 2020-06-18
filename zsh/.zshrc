@@ -20,6 +20,9 @@ plugins=(git tmux)
 export EDITOR='vim'
 
 ssh() {
+  if [[ ! -z "$TMUX" ]]; then
+    tmux rename-window "$(echo $* | cut -d . -f 1)"
+  fi
   which gpgconf >/dev/null
   if [[ "$?" == "0" ]]; then
     echo "Running gpgconf"
