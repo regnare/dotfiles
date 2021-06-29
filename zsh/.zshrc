@@ -1,42 +1,19 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+ANTIGEN_PATH='~/dotfiles'
+source $ANTIGEN_PATH/antigen/antigen.zsh
 
-# https://tldp.org/HOWTO/Xterm-Title-3.html
-DISABLE_AUTO_TITLE="true"
-case $TERM in
-  xterm*)
-    precmd() { print -Pn "\e]0;%n@%m: %~\a" }
-    ;;
-esac
+antigen use oh-my-zsh
+antigen bundles <<ENDOFBUNDLES
+  git
+  fzf
+  zsh-users/zsh-completions
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-syntax-highlighting
+  zsh-users/zsh-autosuggestions
+ENDOFBUNDLES
 
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
-plugins=(git tmux)
+antigen theme candy
+antigen apply
+
 export EDITOR='vim'
 
-ssh() {
-  if [[ ! -z "$TMUX" ]]; then
-    tmux rename-window "$(echo $* | cut -d . -f 1)"
-  fi
-  which gpgconf >/dev/null
-  if [[ "$?" == "0" ]]; then
-    echo "Running gpgconf"
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-    gpgconf --launch gpg-agent
-    gpg-connect-agent updatestartuptty /bye >/dev/null
-  fi
-  command ssh "$@"
-}
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 alias tm="tmux a -d -t remote || tmux new -s remote"
-alias f="ssh farside.lan"
-alias o="ssh obsidian.lan"
-
