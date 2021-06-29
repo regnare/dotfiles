@@ -1,4 +1,4 @@
-ANTIGEN_PATH='~/dotfiles'
+ANTIGEN_PATH=~/dotfiles
 source $ANTIGEN_PATH/antigen/antigen.zsh
 
 antigen use oh-my-zsh
