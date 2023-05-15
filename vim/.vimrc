@@ -7,3 +7,6 @@ set expandtab
 set showmatch
 
 syntax on
+
+set mouse=
+set ttymouse=
