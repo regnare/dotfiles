@@ -1,6 +1,6 @@
 #!/bin/bash
 
-packages_to_install="stow fzf curl tmux neofetch"
+packages_to_install="stow fzf curl tmux neofetch zsh"
 
 function check_package {
   pkg=$1
