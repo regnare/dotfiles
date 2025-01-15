@@ -10,6 +10,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Start ssh-agent if it's not alreaddy running
+[ -n "$SSH_AUTH_SOCK" ] || eval `ssh-agent`
+
 if [[ $(command -v neofetch) ]]; then
   neofetch
 fi
