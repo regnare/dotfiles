@@ -1,5 +1,4 @@
-ANTIGEN_PATH=~/dotfiles
-source $ANTIGEN_PATH/antigen/antigen.zsh
+source ~/.antigen/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundles <<ENDOFBUNDLES
