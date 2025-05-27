@@ -33,3 +33,8 @@ done
 
 mkdir ~/.antigen
 curl -L git.io/antigen > ~/.antigen/antigen.zsh
+
+# Get fonts
+mkdir -p ~/.local/share/fonts
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.tar.xz --output-dir ~/Downloads
+tar xvf ~/Downloads/Meslo.tar.xz -C ~/.local/share/fonts
