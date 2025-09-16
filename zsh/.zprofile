@@ -13,6 +13,6 @@ fi
 # Start ssh-agent if it's not alreaddy running
 [ -n "$SSH_AUTH_SOCK" ] || eval `ssh-agent`
 
-if [[ $(command -v neofetch) ]]; then
-  neofetch
+if [[ $(command -v fastfetch) ]]; then
+  fastfetch
 fi
