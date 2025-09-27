@@ -16,3 +16,4 @@ antigen apply
 export EDITOR='vim'
 
 alias tm="tmux a -d -t remote || tmux new -s remote"
+alias update="sudo sh -c 'apt update && apt upgrade -y && apt autoremove -y'"

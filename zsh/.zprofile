@@ -16,3 +16,5 @@ fi
 if [[ $(command -v fastfetch) ]]; then
   fastfetch
 fi
+
+export QT_QPA_PLATFORM=xcb
